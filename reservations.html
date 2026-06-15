@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greg's Reservations Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">Greg's</a>
+      <div class="nav-links always-show">
+        <a href="index.html">Back to Website</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="section-heading">
+      <p class="eyebrow">Admin view</p>
+      <h2>Reservation Dashboard</h2>
+      <p>
+        This page shows reservations saved from the website form.
+        For now, this is a demo dashboard using browser storage.
+      </p>
+    </div>
+
+    <div class="panel dashboard-actions">
+      <button class="btn primary" onclick="exportReservations()">Download Reservations CSV</button>
+      <button class="btn secondary danger" onclick="clearReservations()">Clear All Reservations</button>
+    </div>
+
+    <div class="panel table-panel">
+      <table class="reservations-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Party Size</th>
+            <th>Status</th>
+            <th>Submitted</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="reservationRows"></tbody>
+      </table>
+      <p id="emptyMessage" class="muted"></p>
+    </div>
+
+    <section class="panel real-backend-note">
+      <h3>Important for a real restaurant</h3>
+      <p>
+        This demo stores reservations in the browser that submitted them.
+        That means it works for testing, but it is not enough for a real public website.
+      </p>
+      <p>
+        For a real restaurant, connect the form to a service like Formspree,
+        Airtable, Supabase, Firebase, Google Sheets, OpenTable, Resy, or Tock.
+        Then reservations will be visible from any device.
+      </p>
+    </section>
+  </main>
+
+  <script src="reservations.js"></script>
+</body>
+</html>
