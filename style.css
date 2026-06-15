@@ -346,3 +346,48 @@ select {
     position: static;
   }
 }
+
+
+.always-show {
+  display: flex;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.table-panel {
+  overflow-x: auto;
+}
+
+.reservations-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.reservations-table th,
+.reservations-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.reservations-table th {
+  color: var(--brand-dark);
+}
+
+.reservations-table button {
+  margin: 2px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.btn.danger {
+  color: var(--brand-dark);
+}

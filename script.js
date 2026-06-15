@@ -131,18 +131,30 @@ const reservationMessage = document.getElementById("reservationMessage");
 reservationForm.addEventListener("submit", event => {
   event.preventDefault();
 
-  const name = document.getElementById("resName").value;
-  const date = document.getElementById("resDate").value;
-  const time = document.getElementById("resTime").value;
-  const partySize = document.getElementById("partySize").value;
+  const reservation = {
+    id: Date.now(),
+    name: document.getElementById("resName").value,
+    email: document.getElementById("resEmail").value,
+    date: document.getElementById("resDate").value,
+    time: document.getElementById("resTime").value,
+    partySize: document.getElementById("partySize").value,
+    status: "New",
+    createdAt: new Date().toLocaleString()
+  };
 
-  reservationMessage.textContent =
-    `Thanks, ${name}! Your reservation request for ${partySize} on ${date} at ${time} was received.`;
+  const reservations = JSON.parse(localStorage.getItem("gregsReservations")) || [];
+  reservations.push(reservation);
+  localStorage.setItem("gregsReservations", JSON.stringify(reservations));
+
+  reservationMessage.innerHTML =
+    `Thanks, ${reservation.name}! Your reservation request for ${reservation.partySize} on ${reservation.date} at ${reservation.time} was saved. <a href="reservations.html">View reservations</a>.`;
 
   reservationForm.reset();
 
-  // For a real restaurant, send this reservation to a backend, Google Form,
-  // Airtable, Supabase, Firebase, OpenTable, Resy, or another booking system.
+  // Important:
+  // This saves reservations in this browser only.
+  // For a real public restaurant site, connect this form to a backend service
+  // like Formspree, Airtable, Supabase, Firebase, Google Sheets, OpenTable, Resy, or Tock.
 });
 
 renderOrderItems();
