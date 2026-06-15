@@ -3,125 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Greg's | Fresh Comfort Food</title>
+  <title>Greg's Restaurant</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero" id="home">
-    <nav class="navbar">
-      <div class="logo">Greg's</div>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#home">Greg's</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <div class="nav-links">
         <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#visit">Visit</a>
-        <a class="button small" href="#reserve">Reserve</a>
+        <a href="#reservations">Reservations</a>
+        <a href="#order">Order Online</a>
+        <a href="#location">Location</a>
       </div>
     </nav>
-
-    <section class="hero-content">
-      <p class="eyebrow">Fresh • Local • Comfort Food</p>
-      <h1>Welcome to Greg's</h1>
-      <p class="subtitle">A cozy neighborhood restaurant serving big flavors, friendly service, and unforgettable meals.</p>
-      <div class="hero-buttons">
-        <a class="button" href="#menu">View Menu</a>
-        <a class="button secondary" href="#reserve">Book a Table</a>
-      </div>
-    </section>
   </header>
 
   <main>
-    <section class="section intro">
-      <h2>Good food. Good people. Good Greg.</h2>
-      <p>At Greg's, every plate is made with care. From crispy starters to house-made burgers and fresh desserts, we keep things simple, tasty, and satisfying.</p>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Fresh food. Local flavor. Easy ordering.</p>
+        <h1>Welcome to Greg's Restaurant</h1>
+        <p>
+          A modern neighborhood restaurant serving burgers, pasta, salads,
+          desserts, and weekend specials.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#reservations">Reserve a Table</a>
+          <a class="btn secondary" href="#order">Order Online</a>
+        </div>
+      </div>
     </section>
 
-    <section class="section menu" id="menu">
-      <p class="eyebrow">Our Favorites</p>
-      <h2>Menu Highlights</h2>
+    <section class="section intro">
+      <h2>Good food, made simple</h2>
+      <p>
+        Greg's is a fake restaurant website template built for learning.
+        Replace the text, photos, menu items, and payment links with your own.
+      </p>
+    </section>
+
+    <section id="menu" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Our favorites</p>
+        <h2>Menu</h2>
+      </div>
+
       <div class="menu-grid">
         <article class="menu-card">
           <h3>Greg's Classic Burger</h3>
-          <p>Angus beef, cheddar, lettuce, tomato, onion, pickles, and Greg's secret sauce.</p>
-          <span>$15</span>
+          <p>Angus beef, cheddar, lettuce, tomato, onion, house sauce.</p>
+          <span>$14.99</span>
         </article>
         <article class="menu-card">
-          <h3>Loaded Garlic Fries</h3>
-          <p>Crispy fries tossed with garlic, parmesan, herbs, and a side of dipping sauce.</p>
-          <span>$9</span>
+          <h3>Chicken Alfredo</h3>
+          <p>Fettuccine, grilled chicken, parmesan cream sauce.</p>
+          <span>$17.99</span>
         </article>
         <article class="menu-card">
-          <h3>Grilled Chicken Bowl</h3>
-          <p>Seasoned chicken, rice, roasted vegetables, avocado, and lemon herb dressing.</p>
-          <span>$16</span>
+          <h3>Garden Salad</h3>
+          <p>Mixed greens, cucumber, tomato, carrots, balsamic dressing.</p>
+          <span>$10.99</span>
         </article>
         <article class="menu-card">
-          <h3>Mac & Cheese Skillet</h3>
-          <p>Creamy three-cheese pasta baked with a golden breadcrumb topping.</p>
-          <span>$13</span>
+          <h3>Margherita Pizza</h3>
+          <p>Fresh mozzarella, basil, tomato sauce, olive oil.</p>
+          <span>$15.99</span>
         </article>
         <article class="menu-card">
-          <h3>Greg's Garden Salad</h3>
-          <p>Mixed greens, cucumbers, tomatoes, carrots, croutons, and house vinaigrette.</p>
-          <span>$11</span>
+          <h3>Chocolate Lava Cake</h3>
+          <p>Warm chocolate cake with vanilla ice cream.</p>
+          <span>$8.99</span>
         </article>
         <article class="menu-card">
-          <h3>Warm Cookie Sundae</h3>
-          <p>Chocolate chip cookie, vanilla ice cream, whipped cream, and chocolate drizzle.</p>
-          <span>$8</span>
+          <h3>Lemonade</h3>
+          <p>Fresh-squeezed lemonade served over ice.</p>
+          <span>$3.99</span>
         </article>
       </div>
     </section>
 
-    <section class="section split" id="about">
+    <section id="reservations" class="section split">
       <div>
-        <p class="eyebrow">Our Story</p>
-        <h2>Made for the neighborhood</h2>
-        <p>Greg's started as a simple idea: create a restaurant where everyone feels welcome. Whether you're here for a quick lunch, a family dinner, or dessert with friends, Greg's is the place to relax and eat well.</p>
+        <p class="eyebrow">Book ahead</p>
+        <h2>Table Reservations</h2>
+        <p>
+          This form collects reservation details on the front end. For a real
+          restaurant, connect this to a booking service like OpenTable, Resy,
+          Tock, Google Forms, or your own backend.
+        </p>
       </div>
-      <div class="feature-box">
-        <h3>Hours</h3>
+
+      <form class="panel" id="reservationForm">
+        <label>
+          Full name
+          <input type="text" id="resName" required placeholder="Your name" />
+        </label>
+
+        <label>
+          Email
+          <input type="email" id="resEmail" required placeholder="you@example.com" />
+        </label>
+
+        <label>
+          Date
+          <input type="date" id="resDate" required />
+        </label>
+
+        <label>
+          Time
+          <input type="time" id="resTime" required />
+        </label>
+
+        <label>
+          Party size
+          <select id="partySize" required>
+            <option value="">Choose size</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7+</option>
+          </select>
+        </label>
+
+        <button class="btn primary full" type="submit">Request Reservation</button>
+        <p class="form-message" id="reservationMessage"></p>
+      </form>
+    </section>
+
+    <section id="order" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Pickup orders</p>
+        <h2>Order Online</h2>
+        <p>Add items to your cart, then continue to payment.</p>
+      </div>
+
+      <div class="order-layout">
+        <div class="order-items" id="orderItems"></div>
+
+        <aside class="cart panel">
+          <h3>Your Cart</h3>
+          <div id="cartItems" class="cart-items">
+            <p class="muted">Your cart is empty.</p>
+          </div>
+
+          <div class="cart-row">
+            <span>Subtotal</span>
+            <strong id="subtotal">$0.00</strong>
+          </div>
+          <div class="cart-row">
+            <span>Estimated tax</span>
+            <strong id="tax">$0.00</strong>
+          </div>
+          <div class="cart-row total">
+            <span>Total</span>
+            <strong id="total">$0.00</strong>
+          </div>
+
+          <a id="checkoutButton" class="btn primary full disabled" href="#" aria-disabled="true">
+            Continue to Payment
+          </a>
+
+          <p class="small-note">
+            Replace the checkout link in <code>script.js</code> with your real
+            Square, Stripe, Toast, Clover, or Shopify checkout/order link.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="location" class="section split">
+      <div>
+        <p class="eyebrow">Visit us</p>
+        <h2>Location & Hours</h2>
+        <p>123 Main Street, College Park, MD</p>
         <p>Monday - Thursday: 11 AM - 9 PM</p>
         <p>Friday - Saturday: 11 AM - 11 PM</p>
-        <p>Sunday: 10 AM - 8 PM</p>
+        <p>Sunday: 12 PM - 8 PM</p>
       </div>
-    </section>
 
-    <section class="section visit" id="visit">
-      <p class="eyebrow">Come Hungry</p>
-      <h2>Visit Greg's</h2>
-      <div class="visit-grid">
-        <div>
-          <h3>Location</h3>
-          <p>123 Flavor Street<br />Foodtown, USA</p>
-        </div>
-        <div>
-          <h3>Phone</h3>
-          <p>(555) 123-GREG</p>
-        </div>
-        <div>
-          <h3>Email</h3>
-          <p>hello@gregs.example</p>
-        </div>
+      <div class="panel">
+        <h3>Contact</h3>
+        <p>Email: hello@gregsrestaurant.com</p>
+        <p>Phone: (555) 123-4567</p>
+        <p>
+          For a real site, replace this with your real address, phone number,
+          Google Map embed, and business email.
+        </p>
       </div>
-    </section>
-
-    <section class="section reserve" id="reserve">
-      <p class="eyebrow">Save Your Spot</p>
-      <h2>Reserve a Table</h2>
-      <form>
-        <input type="text" placeholder="Your name" required />
-        <input type="email" placeholder="Email address" required />
-        <input type="date" required />
-        <input type="time" required />
-        <textarea placeholder="Special requests"></textarea>
-        <button type="submit">Request Reservation</button>
-      </form>
-      <p class="form-note">This is a fake demo form, so it does not actually submit anywhere.</p>
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 Greg's Restaurant. Fake restaurant, real flavor.</p>
+  <footer class="footer">
+    <p>© 2026 Greg's Restaurant. Demo website for learning.</p>
   </footer>
 
   <script src="script.js"></script>
